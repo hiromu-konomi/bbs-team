@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<html cmlns:th="http/www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <!-- thymeleaf全部抜けてます -->
+    <form th:action="@{}" method="post" th:object="">
+        投稿者名：<input type="text" name="name" th:field="">
+
+        投稿内容：<textarea name="content" th:field=""></textarea>
+
+        <button>記事投稿</button>
+    </form>
+    <!-- 投稿があれば、投稿とコメントを表示 -->
+    <div th:if="">
+        <!-- 取得したarticleをth:eachで回して表示してください -->
+        <div th:each="">
+            投稿者名：<span th:text=""></span>
+
+            投稿内容：<br>
+
+            <span th:text=""></span>
+            <!-- 記事削除ボタン：遷移先を指定してください -->
+            <form th:action="@{}" method="post">
+                <button>記事削除</button>
+            </form>
+            <!-- 取得したcommentをth:each で回す-->
+            <div th:each="">
+                コメント者名：<span th:text=""></span>
+
+                コメント内容：<span th:text=""></span>
+            </div>
+            <form th:action="@{}" method="post" th:object="">
+                名前：<br>
+                <input type="text" name="name" th:field="">
+                コメント内容：<br>
+                <textarea name="content" th:field=""></textarea>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
