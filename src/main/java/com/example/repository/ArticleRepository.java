@@ -1,5 +1,6 @@
 package com.example.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.domain.Article;
@@ -22,6 +23,7 @@ public class ArticleRepository {
 
         Article article = new Article();
         Comment comment = new Comment();
+        List<Comment> comList = new ArrayList<Comment>();
 
         article.setId(rs.getString("art.id"));
         article.setName(rs.getString("art.name"));
@@ -29,6 +31,8 @@ public class ArticleRepository {
         comment.setName(rs.getString("com.name"));
         comment.setContent(rs.getString("com.content"));
         comment.setArticleId(rs.getInt("com.article_id"));
+        comList.add(comment);
+        article.getCommentList();
 
         return article;
 
