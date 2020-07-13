@@ -10,17 +10,18 @@
     <!-- thymeleaf全部抜けてます -->
     <form th:action="@{}" method="post" th:object="">
         投稿者名：<input type="text" name="name" th:field="">
-
-        投稿内容：<textarea name="content" th:field=""></textarea>
-
+		<br>
+        投稿内容：<textarea name="content" rows="7" cols="30" th:field=""></textarea>
+		<br>
         <button>記事投稿</button>
     </form>
+    <hr>
     <!-- 投稿があれば、投稿とコメントを表示 -->
     <div th:if="">
         <!-- 取得したarticleをth:eachで回して表示してください -->
         <div th:each="">
             投稿者名：<span th:text=""></span>
-
+			<br>
             投稿内容：<br>
 
             <span th:text=""></span>
@@ -31,15 +32,20 @@
             <!-- 取得したcommentをth:each で回す-->
             <div th:each="">
                 コメント者名：<span th:text=""></span>
-
-                コメント内容：<span th:text=""></span>
+				<br>
+                コメント内容：<br>
+                <span th:text=""></span>
             </div>
             <form th:action="@{}" method="post" th:object="">
                 名前：<br>
                 <input type="text" name="name" th:field="">
+                <br>
                 コメント内容：<br>
-                <textarea name="content" th:field=""></textarea>
+                <textarea name="content" rows="7" cols="30" th:field=""></textarea>
+                <br>
+                <button>コメント投稿</button>
             </form>
+            <hr>
         </div>
     </div>
 </body>
