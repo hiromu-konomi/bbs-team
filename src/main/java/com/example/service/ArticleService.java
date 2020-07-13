@@ -73,7 +73,7 @@ public class ArticleService {
     /**
      * @param article
      */
-    public void Insert(Article article){
+    public void insert(Article article){
         artRepository.insert(article);
     }
 
